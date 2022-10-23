@@ -14,9 +14,10 @@ const ContactList = () => {
 
   const filteredContacts = () => {
     const normilizedValue = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normilizedValue)
-    );
+    return contacts
+      .filter(contact =>
+        contact.name.toLowerCase().includes(normilizedValue))
+      .sort((a, b) => a.name.localeCompare(b.name));
 }
 
   return (
